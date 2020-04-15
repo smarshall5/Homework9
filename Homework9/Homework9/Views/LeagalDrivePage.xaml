@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Homework9.Views.LeagalDrivePage"
+             xmlns:csm="clr-namespace:Homework9.ViewModels"
+             Title="{Binding Title}">
+    <ContentPage.BindingContext>
+        <csm:LeagalDriveViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="How long have you been able to drive?"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+
+            <Label HorizontalTextAlignment="Center" Text="Input your CURRENT age"></Label>
+            <Entry HorizontalTextAlignment="Center" Keyboard="Numeric" Text="{Binding AgeInput}" Completed="CompleteSubmission"></Entry>
+          
+            <Label x:Name="DriveLabel"
+                   IsVisible="False"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
